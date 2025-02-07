@@ -1,15 +1,23 @@
 import { useState } from 'react';
 import './index.css';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import SingnIn from './pages/SingnIn';
+import SignUp from './pages/SignUp';
+import About from './pages/About';
+import Profile from './pages/Profile';
 function App() {
   return (
-    <div className="bg-blue-500 min-h-screen">
-      <div className="bg-blue-500 text-white p-10">
-        <h1 className="bg-red-500 text-white p-5">
-          App
-        </h1>
-      </div>
-    </div>
+    <BrowserRouter>
+    <Routes>
+    <Route path='/' element = {<Home/>}/>
+    <Route path='/sign-in' element = {<SingnIn/>}/>
+    <Route path='/sign-up' element = {<SignUp/>}/>
+    <Route path='/profile' element = {<Profile/>}/>
+    </Routes>
+      
+    </BrowserRouter>
   );
 }
 export default App;
